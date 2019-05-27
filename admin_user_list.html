@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>gitgezgeltravel</title>
+
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+      <a class="navbar-brand mr-1" href="admin.html">ADMİN PANELİ</a>
+
+      <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Navbar Search -->
+      <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+        <!--arama butonu koyulabılır duruma göre>-->
+      </form>
+
+      <!-- Navbar -->
+      <ul class="navbar-nav ml-auto ml-md-0">
+        <li class="nav-item dropdown no-arrow">
+          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user-circle fa-fw"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+            <a class="dropdown-item" href="admin_profil.html">Kullanıcı Profili</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Çıkış Yap</a>
+          </div>
+        </li>
+      </ul>
+
+    </nav>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <ul class="sidebar navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="admin_list.html">
+            <i class="fas fa-fw fa-address-card"></i>
+            <span>Admin Listesi</span>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="admin_user_list.html">
+            <i class="fas fa-fw fa-address-card"></i>
+            <span>Üye Kullanıcılar</span>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-fw  fa-wrench"></i>
+            <span>Ayarlar</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+            <a class="dropdown-item" href="admin_regions.html">Bölgeler</a>
+            <a class="dropdown-item" href="admin_city.html">Şehirler</a>
+            <a class="dropdown-item" href="admin_category.html">Kategoriler</a>
+            <a class="dropdown-item" href="admin_content.html">İçerikler</a>
+            <a class="dropdown-item" href="admin_user_comment.html">Üye Yorumları</a>
+            <div class="dropdown-divider"></div>
+            <h6 class="dropdown-header">Genel Ayarlar:</h6>
+            <a class="dropdown-item" href="#">Hakkımızda</a>
+            <a class="dropdown-item" href="#">İletişim</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="admin_add.html">
+            <i class="fas fa-fw fa-user-edit"></i>
+            <span>Admin Ekle-Sil</span></a>
+        </li>
+      </ul>
+
+      <div id="content-wrapper">
+
+        <div class="container-fluid">
+         
+          <!-- DataTables Example -->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+              Kullanıcı Üye Tablosu</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Adı</th>
+                      <th>Soyadı</th>
+                      <th>Telefon</th>
+                      <th>Mail</th>
+                      <th>Şifre</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Adı</th>
+                      <th>Soyadı</th>
+                      <th>Telefon</th>
+                      <th>Mail</th>
+                      <th>Şifre</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    <tr>
+                      <td>Mehmet Ali</td>
+                      <td>Davullu</td>
+                      <td>05534972550</td>
+                      <td>mehmetalidavullu@gmail.com</td>
+                      <td>sifre12345</td>
+                    </tr>
+                    <tr>
+                      <td>Mehmet Ali</td>
+                      <td>Davullu</td>
+                      <td>05534972550</td>
+                      <td>mehmetalidavullu@gmail.com</td>
+                      <td>sifre12345</td>
+                  </tr>
+                  <tr>
+                      <td>Melek</td>
+                      <td>Kılıç</td>
+                      <td>05423122704</td>
+                      <td>melekk_4986@hotmail.com</td>
+                      <td>mlk12345</td>
+                  </tr>
+                  <tr>
+                      <td>Elif</td>
+                      <td>Doğan</td>
+                      <td>05418676586</td>
+                      <td>elifdogan96@gmail.com</td>
+                      <td>elf12345</td>
+                  </tr>
+                  <tr>
+                      <td>Burak</td>
+                      <td>Vural</td>
+                      <td>05373844501</td>
+                      <td>bmv@gmail.com</td>
+                      <td>bmv12345</td>
+                  </tr>
+                  <tr>
+                      <td>Yiğit</td>
+                      <td>Kadıköylü</td>
+                      <td>05077181163</td>
+                      <td>yigitkadıköylü@gmail.com</td>
+                      <td>ygt12345</td>
+                  </tr>
+                  <tr>
+                      <td>Elif Esra</td>
+                      <td>Özgül</td>
+                      <td>05426771996</td>
+                      <td>elifesra@gmail.com</td>
+                      <td>elfesr123</td>
+                  </tr>
+                  <tr>
+                      <td>Esra</td>
+                      <td>Aydın</td>
+                      <td>05459721682</td>
+                      <td>esraaydin@gmail.com</td>
+                      <td>esraydn123</td>
+                  </tr>
+                  <tr>
+                      <td>Zişan</td>
+                      <td>Kılıç</td>
+                      <td>05436097745</td>
+                      <td>zsnklc@gmail.com</td>
+                      <td>zsnklc001</td>
+                  </tr>
+                  <tr>
+                      <td>Nurefsan</td>
+                      <td>Kılıç</td>
+                      <td>05444205026</td>
+                      <td>nk001@gmail.com</td>
+                      <td>nur12345</td>
+                  </tr>
+                  <tr>
+                      <td>Ali</td>
+                      <td>Demir</td>
+                      <td>05534972850</td>
+                      <td>alid@gmail.com</td>
+                      <td>sfr12345</td>
+                  </tr>
+                  <tr>
+                      <td>Ayşe</td>
+                      <td>Dal</td>
+                      <td>05533972550</td>
+                      <td>aysedal@gmail.com</td>
+                      <td>ayse3456</td>
+                  </tr>
+                  <tr>
+                      <td>Şeyma</td>
+                      <td>Birinci</td>
+                      <td>05427890123</td>
+                      <td>seymabirinci@gmail.com</td>
+                      <td>sb123456</td>
+                  </tr>
+                  <tr>
+                      <td>Züleyha</td>
+                      <td>Karabudak</td>
+                      <td>05457163326</td>
+                      <td>karabudakz@gmail.com</td>
+                      <td>zülüs123</td>
+                  </tr>
+                  <tr>
+                      <td>Büşra</td>
+                      <td>Temur</td>
+                      <td>05078739817</td>
+                      <td>büsratemur@gmail.com</td>
+                      <td>btmr1234</td>
+                  </tr>
+                  <tr>
+                      <td>Caner</td>
+                      <td>Baysar</td>
+                      <td>05466167778</td>
+                      <td>cnrbysr@gmail.com</td>
+                      <td>cnr12345</td>
+                  </tr>
+                  <tr>
+                      <td>Ekrem</td>
+                      <td>Erkek</td>
+                      <td>05077133680</td>
+                      <td>ekremerkk@gmail.com</td>
+                      <td>ekrm1234</td>
+                  </tr>
+                  <tr>
+                      <td>Furkan</td>
+                      <td>Aba</td>
+                      <td>05069423346</td>
+                      <td>furkanaba@gmail.com</td>
+                      <td>frkn1234</td>
+                  </tr>
+                  <tr>
+                      <td>Bünyamin</td>
+                      <td>Aydın</td>
+                      <td>05414983868</td>
+                      <td>bunyaminaydn@gmail.com</td>
+                      <td>bnymn123</td>
+                  </tr>
+                  <tr>
+                      <td>Muhammed Said</td>
+                      <td>Aydın</td>
+                      <td>05070213929</td>
+                      <td>msa@gmail.com</td>
+                      <td>msa12345</td>
+                  </tr>
+                  <tr>
+                      <td>Serkan</td>
+                      <td>Çakan</td>
+                      <td>05468820504</td>
+                      <td>serkanckn@gmail.com</td>
+                      <td>srkn1234</td>
+                  </tr>
+                  <tr>
+                      <td>Zeynep</td>
+                      <td>Aydın</td>
+                      <td>05456829169</td>
+                      <td>zeyneb96@gmail.com</td>
+                      <td>za961234</td>
+                  </tr>
+                  <tr>
+                      <td>Emir</td>
+                      <td>Köseoğlu</td>
+                      <td>05543456789</td>
+                      <td>mek@gmail.com</td>
+                      <td>mek12345</td>
+                  </tr>
+                  <tr>
+                      <td>Yusuf</td>
+                      <td>Akdoğan</td>
+                      <td>05515922827</td>
+                      <td>yusufakdogan@gmail.com</td>
+                      <td>mrbeyin123</td>
+                  </tr>
+                  <tr>
+                      <td>Yücel</td>
+                      <td>Yılmaz</td>
+                      <td>05353750160</td>
+                      <td>yücelyilmaz@gmail.com</td>
+                      <td>ycl12345</td>
+                  </tr>
+                  <tr>
+                      <td>Fatma</td>
+                      <td>Mertoğlu</td>
+                      <td>05071555215</td>
+                      <td>fatmamrt@gmail.com</td>
+                      <td>ftm12345</td>
+                  </tr>
+                  <tr>
+                      <td>Merve</td>
+                      <td>Gökbakan</td>
+                      <td>05456698515</td>
+                      <td>mervegkbkn@gmail.com</td>
+                      <td>gkbkn123</td>
+                  </tr>
+                  <tr>
+                      <td>Ömer Faruk</td>
+                      <td>Aksoy</td>
+                      <td>05545432678</td>
+                      <td>ömeraksoy@gmail.com</td>
+                      <td>omr12345</td>
+                  </tr>
+                  <tr>
+                      <td>Karabey</td>
+                      <td>Hatunoğlu</td>
+                      <td>05345890987</td>
+                      <td>mkarabeyh@gmail.com</td>
+                      <td>krby1234</td>
+                  </tr>
+                  <tr>
+                      <td>Ahmet</td>
+                      <td>Alpaslan</td>
+                      <td>05454537656</td>
+                      <td>ahmetalpaslan@gmail.com</td>
+                      <td>alp12345</td>
+                  </tr>
+                  <tr>
+                      <td>Esra</td>
+                      <td>Ayyıldız</td>
+                      <td>05077921178</td>
+                      <td>esraayyldz@gmail.com</td>
+                      <td>esra1234</td>
+                  </tr>
+                  <tr>
+                      <td>Ayşenur</td>
+                      <td>Akil</td>
+                      <td>05550917606</td>
+                      <td>ayseakil@gmail.com</td>
+                      <td>aliayse123</td>
+                  </tr>
+                  <tr>
+                      <td>Behiç</td>
+                      <td>Kılıç</td>
+                      <td>05419791996</td>
+                      <td>kadirbehic@gmail.com</td>
+                      <td>kbk12345</td>
+                  </tr>
+                  <tr>
+                      <td>Berna</td>
+                      <td>Varlık</td>
+                      <td>05446218626</td>
+                      <td>bvarlik@gmail.com</td>
+                      <td>brnvrlk123</td>
+                  </tr>
+                  <tr>
+                      <td>Beyza</td>
+                      <td>Ölçüm</td>
+                      <td>05359228704</td>
+                      <td>beyzalcm@gmail.com</td>
+                      <td>byz12345</td>
+                  </tr>
+                  <tr>
+                      <td>Mehmet Ali</td>
+                      <td>Davullu</td>
+                      <td>05534972550</td>
+                      <td>mehmetalidavullu@gmail.com</td>
+                      <td>sifre12345</td>
+                  </tr>
+                  <tr>
+                      <td>Burak</td>
+                      <td>Yünkül</td>
+                      <td>05078232889</td>
+                      <td>bynkl23@gmail.com</td>
+                      <td>b232323</td>
+                  </tr>
+                  <tr>
+                      <td>Umut</td>
+                      <td>Savcı</td>
+                      <td>05314807212</td>
+                      <td>umutcengiz@gmail.com</td>
+                      <td>ucs12345</td>
+                  </tr>
+                  <tr>
+                      <td>Ceren</td>
+                      <td>Bulut</td>
+                      <td>05424603878</td>
+                      <td>cerenbulut@gmail.com</td>
+                      <td>crnblt123</td>
+                  </tr>
+                  <tr>
+                      <td>Sena</td>
+                      <td>Çoban</td>
+                      <td>05427807920</td>
+                      <td>senacoban@gmail.com</td>
+                      <td>sncbn123</td>
+                  </tr>
+                  <tr>
+                      <td>Dilara</td>
+                      <td>Erdem</td>
+                      <td>05418728913</td>
+                      <td>dilaraerdem@gmail.com</td>
+                      <td>dlr12345</td>
+                  </tr>
+                  <tr>
+                      <td>İrem</td>
+                      <td>Erdem</td>
+                      <td>05417117038</td>
+                      <td>iremerdem@gmail.com</td>
+                      <td>irm12345</td>
+                  </tr>
+                  <tr>
+                      <td>Kübra</td>
+                      <td>Eyüpoğlu</td>
+                      <td>05456755969</td>
+                      <td>kbreyp@gmail.com</td>
+                      <td>kbr12345</td>
+                  </tr>
+                  <tr>
+                      <td>Fatih</td>
+                      <td>Kanat</td>
+                      <td>05467220004</td>
+                      <td>fatihknt@gmail.com</td>
+                      <td>fth12345</td>
+                  </tr>
+                  <tr>
+                      <td>Şule</td>
+                      <td>Kaya</td>
+                      <td>05437872550</td>
+                      <td>sulekaya@gmail.com</td>
+                      <td>sule12345</td>
+                  </tr>
+                  <tr>
+                      <td>Mehtap</td>
+                      <td>Aydemir</td>
+                      <td>05415678909</td>
+                      <td>mhtpmrc@gmail.com</td>
+                      <td>klc23451</td>
+                  </tr>
+                  <tr>
+                      <td>Miraç</td>
+                      <td>Aydemir</td>
+                      <td>05324972570</td>
+                      <td>miracaydemir@gmail.com</td>
+                      <td>miray12345</td>
+                  </tr>
+                  <tr>
+                      <td>Volkan</td>
+                      <td>Erdem</td>
+                      <td>05513456242</td>
+                      <td>volkanerdem@gmail.com</td>
+                      <td>erdem1234</td>
+                  </tr>
+                  <tr>
+                      <td>Murat Ensar</td>
+                      <td>Erdem</td>
+                      <td>05534972540</td>
+                      <td>muratensar@gmail.com</td>
+                      <td>tuba12345</td>
+                  </tr>
+                  <tr>
+                      <td>Neriman</td>
+                      <td>Turan</td>
+                      <td>05434972550</td>
+                      <td>nerimanturan@gmail.com</td>
+                      <td>nero12345</td>
+                  </tr>
+                  <tr>
+                      <td>Nisa</td>
+                      <td>Başaran</td>
+                      <td>05534816631</td>
+                      <td>nisabasaran@gmail.com</td>
+                      <td>nbc12345</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!--<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>-->
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright © GitGezGelTravel 2018</span>
+            </div>
+          </div>
+        </footer>
+
+      </div>
+      <!-- /.content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Oturumu Kapat</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Mevcut oturumunuzu sonlandırmaya hazırsanız, "Çıkış Yap" ı seçin.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Vazgeç</button>
+            <a class="btn btn-primary" href="admin_login.html">Çıkış Yap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+
+    <!-- Demo scripts for this page-->
+    <script src="js/demo/datatables-demo.js"></script>
+    <script src="js/demo/chart-area-demo.js"></script>
+
+  </body>
+
+</html>
